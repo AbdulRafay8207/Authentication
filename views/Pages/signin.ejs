@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin</title>
+    <link rel="stylesheet" href="/signin.css">
+</head>
+
+<body>
+    <div id="outerbox">
+        <div id="container">
+            <img src="https://baitussalam.org/images/logo.svg" alt="baitussalam">
+            <h1>Sign in</h1>
+            <% if(typeof errors !== 'undefined' && errors.length > 0){ %>
+                <ul id="errorList">
+                <% errors.forEach(err => { %>
+                    <li><%= err %></li>
+                <% }) %>
+                </ul>
+            <% } %>
+            <form action="/signin" method="post">
+            <input type="text" name="firstName" id="firstName" placeholder="First Name"><br> <br>
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name"><br> <br>
+            <input type="email" name="email" id="email" placeholder="Email"  /> <br> <br>
+            <input type="text" name="username" id="Username" placeholder="Username"  /> <br> <br>
+            <input type="password" name="password" id="password" placeholder="Password"  />  
+            <a id="BackToLogin" href="./login">Back to login page</a> <br> <br>
+            <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

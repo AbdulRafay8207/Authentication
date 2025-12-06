@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/login.css">
+</head>
+
+<body>
+    <div id="outerbox">
+        <div id="container">
+            <img src="https://baitussalam.org/images/logo.svg" alt="baitussalam">
+            <h1>Welcome Back</h1>
+            <% if(errorMsg){%>
+                <p id="errorMsg"><%= errorMsg %></p>
+            <% } %>
+            <% if(successMsg){ %>
+                <p id="successMsg"><%= successMsg %></p>
+            <% } %>
+            <form action="/login" method="post">
+            <input name="email" placeholder="existing email abdulrafay.8207@gmail.com" type="email" /> <br> <br>
+            <input name="password" placeholder="existing password rafay123" type="password" />
+            <a id="account" href="./signin">Don't have an account?</a> <br> <br>
+            <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
