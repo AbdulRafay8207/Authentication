@@ -8,6 +8,8 @@ app.set("view engine", "ejs")
 app.use(express.json({extended:true}))
 app.use(express.urlencoded({extended: true}))
 app.use(express.static(path.join(__dirname, 'Assets')))
+app.set("views", path.join(__dirname, "views"));
+
 
 app.get("/login",(req,res) =>{
     const successMsg = req.query.success || null;
@@ -53,5 +55,6 @@ app.post('/signin',validation.createNewUser,async (req,res) => {
     }
 })
 
-const PORT = 3200
-app.listen(PORT,()=> console.log("Server started at port",PORT))
+// const PORT = 3200
+// app.listen(PORT,()=> console.log("Server started at port",PORT))
+module.exports = app;
