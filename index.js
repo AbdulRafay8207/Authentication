@@ -10,6 +10,11 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.static(path.join(__dirname, 'Assets')))
 app.set("views", path.join(__dirname, "views"));
 
+app.get("/",(req,res) =>{
+    const successMsg = req.query.success || null;
+    const errorMsg = req.query.error || null
+    res.render('Pages/login',{errorMsg,successMsg})
+})
 
 app.get("/login",(req,res) =>{
     const successMsg = req.query.success || null;
